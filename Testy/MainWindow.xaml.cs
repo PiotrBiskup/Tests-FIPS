@@ -63,7 +63,16 @@ namespace Testy
 
         private void SaveToFileButton_Click(object sender, RoutedEventArgs e)
         {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.DefaultExt = ".txt";
+            sfd.Filter = "Text documents (.txt)|*.txt";
 
+            if (sfd.ShowDialog() == true)
+            {
+                File.WriteAllText(sfd.FileName, "1. Test pojedynczych bitów:\n" + test1TextBlock.Text + "\n\n2. Test serii:\n" + test2TextBlock.Text +
+                                                 "\n\n3. Test długiej serii:\n" + test3TextBlock.Text + "\n\n4. Test pokerowy:\n" + test4TextBlock.Text +
+                                                 "\n\nKey:\n" + keyTextBox.Text);
+            }
         }
 
         private void keyTextBox_TextChanged(object sender, TextChangedEventArgs e)
