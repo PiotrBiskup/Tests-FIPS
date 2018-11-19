@@ -1,0 +1,80 @@
+﻿<Window x:Class="Testy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Testy"
+        mc:Ignorable="d"
+        Title="Testy FIPS" Height="656.25" Width="800">
+    <Grid>
+
+        <Border Padding="10">
+
+            <StackPanel>
+
+                <TextBlock Text="Testy" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20"/>
+                <TextBlock Text="Wprowadź ciąg binarny lub załaduj go z pliku:" Margin="0 10 0 10" />
+                <TextBox TextChanged="keyTextBox_TextChanged" x:Name="keyTextBox" Padding="5" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Height="100" PreviewTextInput="keyTextBox_PreviewTextInput"/>
+
+                <Grid Margin="0 10 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0">
+                        <Button Width="150" x:Name="RunButton" Content="Run Tests" Click="RunButton_Click"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1">
+                        <Button Width="150"  x:Name="LoadFromAFileButton" Content="Load from a file" Click="LoadFromAFileButton_Click"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2">
+                        <Button Width="150" x:Name="ResetButton" Content="Reset" Background="Red" Click="ResetButton_Click"/>
+                    </StackPanel>
+
+                </Grid>
+
+                <Grid Margin="0 10 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0" Margin="10 10 10 0">
+                        <TextBlock FontWeight="Bold" Text="1. Test pojedynczych bitów:" Margin="0 10 0 10" />
+                        <TextBlock TextWrapping="Wrap" x:Name="test1TextBlock"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" Margin="10 10 10 0">
+                        <TextBlock FontWeight="Bold" Text="2. Test serii:" Margin="0 10 0 10" />
+                        <TextBlock TextWrapping="Wrap" x:Name="test2TextBlock"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2" Margin="10 10 10 0">
+                        <TextBlock FontWeight="Bold" Text="3. Test długiej serii:" Margin="0 10 0 10" />
+                        <TextBlock TextWrapping="Wrap" x:Name="test3TextBlock"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="3" Margin="10 10 10 0">
+                        <TextBlock FontWeight="Bold" Text="4. Test pokerowy:" Margin="0 10 0 10" />
+                        <TextBlock TextWrapping="Wrap" x:Name="test4TextBlock"/>
+                    </StackPanel>
+
+
+                </Grid>
+
+                <Button Content="Save result to a file" Width="150" HorizontalAlignment="Center" Margin="0 30 0 0" x:Name="SaveToFileButton" Click="SaveToFileButton_Click"/>
+
+
+
+            </StackPanel>
+
+        </Border>
+        
+    </Grid>
+</Window>
