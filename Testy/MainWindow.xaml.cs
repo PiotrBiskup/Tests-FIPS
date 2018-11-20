@@ -140,6 +140,33 @@ namespace Testy
                 {
                     counter++;
 
+                    if(i == keyTextBox.Text.Length - 1)
+                    {
+                        if(keyTextBox.Text[i] == '0')
+                        {
+                            if(counter < 5)
+                            {
+                                serieZer[counter]++;
+                            } else
+                            {
+                                serieZer[5]++;
+                                if (counter >= 26) dlugieSerie[0]++;
+                            }
+                        } else
+                        {
+                            if (counter < 5)
+                            {
+                                serieJedynek[counter]++;
+
+                            }
+                            else
+                            {
+                                serieJedynek[5]++;
+                                if (counter >= 26) dlugieSerie[1]++;
+                            }
+                        }
+                    }
+
                 } else 
                 {
                     if(previous == '0')
