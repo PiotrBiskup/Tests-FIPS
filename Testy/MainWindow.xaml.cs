@@ -82,7 +82,7 @@ namespace Testy
 
         private void shouldRunButtonBeActive()
         {
-            if(keyTextBox.Text.Length > 0)
+            if(keyTextBox.Text.Length >= 20000)
             {
                 RunButton.IsEnabled = true;
             } else
